@@ -43,21 +43,6 @@ describe('directoryTree', () => {
 		expect(callback_executed_times).to.equal(number_of_directories);
 	});
 
-	it('should execute a callback function for each file with specified extensions', () => {
-		let number_of_files =  6;
-		let callback_executed_times = 0;
-
-		const tree = dirtree('./test/test_data', {extensions:/\.txt$/}, function(item, PATH) {
-			callback_executed_times++;
-		});
-		expect(callback_executed_times).to.equal(number_of_files);
-	});
-
-	it('should display the size of a directory (summing up the children)', () => {
-		const tree = dirtree('./test/test_data', {extensions:/\.txt$/});
-		expect(tree.size).to.be.above(11000);
-	});
-
 	it('should not crash with directories where the user does not have necessary permissions', () => {
 		const tree = dirtree('/root/', {extensions:/\.txt$/});
 		expect(tree).to.equal(null);
@@ -77,17 +62,6 @@ describe('directoryTree', () => {
 		}
 		expect(badFunction).to.throw(error);
 	})
-
-	it('should exclude the correct folders', () => {
-		const tree = dirtree('./test/test_data',{exclude: /another_dir/, normalizePath: true});
-		expect(tree).to.deep.equal(excludeTree);
-	});
-
-	it('should exclude multiple folders', () => {
-		const tree = dirtree('./test/test_data', {exclude: [/another_dir/, /some_dir_2/], normalizePath: true});
-		expect(tree).to.deep.equal(excludeTree2);
-
-	});
 
 	it('should include attributes', () => {
 		const tree = dirtree('./test/test_data',{ attributes: ['mtime', 'ctime']});
