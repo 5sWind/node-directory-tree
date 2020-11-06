@@ -1,22 +1,22 @@
 {
-  "name": "directory-tree",
+  "name": "dir-object-conversion",
   "version": "2.2.5",
   "description": "Convert a directory tree to a JS object.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mihneadb/node-directory-tree"
+    "url": "https://github.com/5sWind/node-directory-tree"
   },
   "keywords": [
     "directory",
     "tree"
   ],
   "main": "lib/directory-tree.js",
-  "author": "Mihnea Dobrescu-Balaur",
+  "author": "5sWind",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mihneadb/node-directory-tree/issues"
+    "url": "https://github.com/5sWind/node-directory-tree/issues"
   },
-  "homepage": "https://github.com/mihneadb/node-directory-tree",
+  "homepage": "https://github.com/5sWind/node-directory-tree",
   "dependencies": {},
   "devDependencies": {
     "chai": "^2.3.0",
